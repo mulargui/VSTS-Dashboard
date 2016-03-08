@@ -14,7 +14,6 @@ namespace VSTS_Dashboard
         const string instance = "mulargui";
         const string project = "Explorer";
         const string user = "mulargui@hotmail.com";
-        
 
         public VsoConnection()
         {
@@ -62,11 +61,8 @@ namespace VSTS_Dashboard
         {
             //get the list of IDs of worktitems that are bugs or user stories
             var body = "{ \"query\": \"Select [ID] FROM WorkItems WHERE"
-                + " ("
                 + " [Work Item Type] = 'Bug'"
-                + " OR [Work Item Type] = 'User Story'"
-                + ")"
-                + " AND [Area Path] under 'OneITVSO\\\\Shared Platforms\\\\Common Architecture and Tools\\\\Foundation\\\\Transactional Services'"
+                + " OR [Work Item Type] = 'Product Backlog Item'"
                 + "\" }";
 
             using (HttpResponseMessage response = PostAsync(

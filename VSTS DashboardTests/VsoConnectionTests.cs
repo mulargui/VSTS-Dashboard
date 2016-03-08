@@ -15,7 +15,7 @@ namespace VSTS_Dashboard.Tests
         public void GetStatusTest()
         {
             const string workitemid = "41018";
-            string responseBody;
+            //string responseBody;
 
             VsoConnection d = new VsoConnection();
             var task = new Task(() => d.GetStatus(workitemid));
